@@ -1,0 +1,10 @@
+<div id="post_content">
+  <h1> bai viet moi </h1>
+  <% @posts.each do |post| %>
+    <div class="post_wrapper">
+      <h1 class="title"><%= link_to post.title, post %></h1>  
+      <p class="date"><%= time_ago_in_words(post.created_at)%></p>
+      <div>Image: <%= post.img %></div>
+    </div>
+<% end %>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myblog</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<script type="text/javascript">
+  function show(){
+    console.log('aaa')
+  }
+</script>
+  <body>
+    <div id="sidebar">
+      <div id="logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
+      </div>
+
+      <ul>
+        <li class="category">Website</li>
+        <li><%= link_to "Blog", root_path %></li>
+        <li><%= link_to "About", root_path %></li>
+      </ul>
+
+      <ul>
+        <li class="category">Social</li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="m#">Email</a></li>
+      </ul>
+    </div>
+    <div id="main_content">
+      <div id="header">
+        <p> All post </p>
+        <div class="buttons">
+          <%= link_to "New Post", new_post_path() ,class: "button"%>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+   
+  </body>
+</html>
